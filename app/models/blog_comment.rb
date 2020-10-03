@@ -1,8 +1,9 @@
 class BlogComment < ApplicationRecord
-	belongs_to :user
-	belongs_to :blog
-	has_many :notifications, dependent: :destroy
+  default_scope -> { order(created_at: :desc) }
+  
+  belongs_to :user
+  belongs_to :blog
+  has_many :notifications, dependent: :destroy
 
-	validates :comment, presence: true
-
+  validates :comment, presence: true
 end

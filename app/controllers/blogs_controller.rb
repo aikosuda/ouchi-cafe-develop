@@ -1,13 +1,16 @@
 class BlogsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+
   def show
-    @blog = Blog.find(params[:id])
     @tag_list = @blog.tags
     @blog_comment = BlogComment.new
     @blog_comments = @blog.blog_comments.reverse_order
   end
 
   def index
-    @tag_list = Tag.all
+    @tag_list = Tag.page(params[:page]).per(6)
+    @tag_lists = Tag.all
     @blogs = Blog.page(params[:page]).per(5)
   end
 
@@ -27,12 +30,10 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    @blog = Blog.find(params[:id])
     @tag_list = @blog.tags.pluck(:name).join
   end
 
   def update
-    @blog = Blog.find(params[:id])
     tag_list = params[:blog][:name].split(/[[:blank:]]/)
     if @blog.update(blog_params)
       @blog.save_tag(tag_list)
@@ -43,45 +44,52 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @blog = Blog.find(params[:id])
     if @blog.destroy
       redirect_to blogs_path, notice: "記事を削除しました"
     else
       render :show
     end
-
   end
 
+  # ブログ検索画面表示
   def select
-    @tag_list = Tag.all
+    @tag_list = Tag.page(params[:page]).per(6)
+    @tag_lists = Tag.all
     @blogs = Blog.page(params[:page]).per(4)
   end
 
+  # タグで一覧表示
   def tag
-    @tag_list = Tag.all
+    @tag_list = Tag.page(params[:page]).per(6)
+    @tag_lists = Tag.all
     @tag = Tag.find_by(name: params[:name])
     @blogs = @tag.blogs.page(params[:page]).per(10)
     render :index
   end
 
+  # 検索窓からの検索結果表示
   def search
-    @tag_list = Tag.all
+    @tag_list = Tag.page(params[:page]).per(6)
+    @tag_lists = Tag.all
     @search = params[:search]
     @user_or_title = params[:option]
     if @user_or_title == "1"
-        @users = User.search_blog(params[:search])
-        @users.each do |user|
-          @user_blogs = Blog.where(user_id: user.id).page(params[:page]).per(5)
-        end
+      @users = User.search_blog(params[:search])
+      @users.each do |user|
+        @user_blogs = Blog.where(user_id: user.id).page(params[:page]).per(5)
+      end
     else
-        @blogs = Blog.search_blog(params[:search]).page(params[:page]).per(5)
+      @blogs = Blog.search_blog(params[:search]).page(params[:page]).per(5)
     end
   end
 
   private
 
-  def blog_params
-    params.require(:blog).permit(:title, :content)
-  end
+    def blog_params
+      params.require(:blog).permit(:title, :content)
+    end
 
+    def set_blog
+      @blog = Blog.find(params[:id])
+    end
 end
