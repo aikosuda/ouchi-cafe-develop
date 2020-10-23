@@ -75,6 +75,4 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'dotenv-rails'
 gem 'wysiwyg-rails'
 gem 'rubocop-airbnb'
-group :production do
-  gem 'mysql2'
-end
+

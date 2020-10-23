@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_095609) do
+ActiveRecord::Schema.define(version: 2020_10_23_094138) do
 
   create_table "blog_comments", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -24,6 +24,28 @@ ActiveRecord::Schema.define(version: 2020_09_29_095609) do
     t.integer "user_id", null: false
     t.string "title", null: false
     t.text "content", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "coffee_notes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "name", null: false
+    t.string "shop"
+    t.integer "price"
+    t.integer "quontity"
+    t.string "producing_area"
+    t.integer "condition", default: 0, null: false
+    t.integer "roasting_degree", default: 0, null: false
+    t.string "image_id"
+    t.string "comment"
+    t.float "raty"
+    t.integer "acidity", null: false
+    t.integer "scent", null: false
+    t.integer "sweetness", null: false
+    t.integer "bitter_taste", null: false
+    t.integer "rich", null: false
+    t.integer "status", limit: 1, default: 1, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
