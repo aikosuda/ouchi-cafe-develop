@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :follower_user, through: :followed, source: :follower # 自分をフォローしている人
   has_many :active_notifications, class_name: "Notification", foreign_key: "visitor_id", dependent: :destroy # 自分が作った通知
   has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy # 自分宛の通知
+  has_many :coffee_notes, dependent: :destroy
 
   attachment :profile_image
 
