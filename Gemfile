@@ -75,4 +75,5 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'dotenv-rails'
 gem 'wysiwyg-rails'
 gem 'rubocop-airbnb'
+gem 'chart-js-rails', '~> 0.1.4'
 

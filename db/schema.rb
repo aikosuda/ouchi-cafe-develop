@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_10_23_094138) do
     t.integer "roasting_degree", default: 0, null: false
     t.string "image_id"
     t.string "comment"
-    t.float "raty"
+    t.float "rate"
     t.integer "acidity", null: false
     t.integer "scent", null: false
     t.integer "sweetness", null: false
