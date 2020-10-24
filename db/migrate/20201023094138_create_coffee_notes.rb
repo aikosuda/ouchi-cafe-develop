@@ -12,7 +12,7 @@ class CreateCoffeeNotes < ActiveRecord::Migration[5.2]
       t.integer :roasting_degree, null: false, default: 0
       t.string :image_id
       t.string :comment
-      t.float :raty
+      t.float :rate
       t.integer :acidity, null: false
       t.integer :scent, null: false
       t.integer :sweetness, null: false

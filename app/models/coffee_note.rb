@@ -38,13 +38,7 @@ class CoffeeNote < ApplicationRecord
     	"カフェ":     5,
   	}
   	enum roasting_degree:{
-    	"---":       0,
-    	"浅煎り":        1,
-    	"中煎り":        2,
-    	"深煎り":        3,
-  	}
-  	enum roasting_degree:{
-    	"---":       0,
+    	"--":       0,
     	"浅煎り":        1,
     	"中煎り":        2,
     	"深煎り":        3,
