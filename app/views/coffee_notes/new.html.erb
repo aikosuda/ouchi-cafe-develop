@@ -16,9 +16,9 @@
 			</div>
 
 			<div class="col-md-6">
-				<div class="form-group" id="star">
+				<div class="form-group" id="total_star">
 					<h4><%= f.label :rate, "総合評価" %></h4>
-					<%= f.hidden_field :rate, id: :review_rate %>
+					<%= f.hidden_field :rate, id: :coffee_note_rate %>
 				</div>
 				<div class="form-group">
 					<h4><%= f.label :name, "名称" %></h4>
@@ -50,23 +50,23 @@
 				</div>
 				<div class="form-group" id="sub-star1">
 					<h4><%= f.label :acidity, "酸味" %></h4>
-					<%= f.hidden_field :acidity, id: :subreview_rate1 %>
+					<%= f.hidden_field :acidity, id: :coffee_note_acidity %>
 				</div>
 				<div class="form-group" id="sub-star2">
 					<h4><%= f.label :scent, "香り" %></h4>
-					<%= f.hidden_field :scent, id: :rsubeview_rate2 %>
+					<%= f.hidden_field :scent, id: :coffee_note_scent %>
 				</div>
 				<div class="form-group" id="sub-star3">
 					<h4><%= f.label :sweetness, "甘み" %></h4>
-					<%= f.hidden_field :sweetness, id: :subreview_rate3 %>
+					<%= f.hidden_field :sweetness, id: :coffee_note_sweetness %>
 				</div>
 				<div class="form-group" id="sub-star4">
 					<h4><%= f.label :bitter_taste, "苦味" %></h4>
-					<%= f.hidden_field :bitter_taste, id: :subreview_rate4 %>
+					<%= f.hidden_field :bitter_taste, id: :coffee_note_bitter_taste %>
 				</div>
 				<div class="form-group" id="sub-star5">
 					<h4><%= f.label :rich, "コク" %></h4>
-					<%= f.hidden_field :rich, id: :subreview_rate5 %>
+					<%= f.hidden_field :rich, id: :coffee_note_rich %>
 				</div>
 			</div>
 
@@ -103,12 +103,12 @@
 
 <%# 星評価 %>
 <script type="text/javascript">
-	$('#star').raty({
+	$('#total_star').raty({
    		size: 36,
    		starOff:  '<%= asset_path('star-off.png') %>',
         starOn : '<%= asset_path('star-on.png') %>',
         starHalf: '<%= asset_path('star-half.png') %>',
-   		scoreName: 'review[rate]', 
+   		scoreName: 'coffee_note[rate]', 
    		half: true, 
  	});
 
@@ -116,35 +116,35 @@
    		size: 36,
    		starOff:  '<%= asset_path('star-off.png') %>',
         starOn : '<%= asset_path('star-on.png') %>',
-   		scoreName: 'subreview[rate1]', 
+   		scoreName: 'coffee_note[acidity]', 
    		half: false, 
  	});
  	$('#sub-star2').raty({
    		size: 36,
    		starOff:  '<%= asset_path('star-off.png') %>',
         starOn : '<%= asset_path('star-on.png') %>',
-   		scoreName: 'subreview[rate2]', 
+   		scoreName: 'coffee_note[scent]', 
    		half: false, 
  	});
  	$('#sub-star3').raty({
    		size: 36,
    		starOff:  '<%= asset_path('star-off.png') %>',
         starOn : '<%= asset_path('star-on.png') %>',
-   		scoreName: 'subreview[rate3]', 
+   		scoreName: 'coffee_note[sweetness]', 
    		half: false, 
  	});
  	$('#sub-star4').raty({
    		size: 36,
    		starOff:  '<%= asset_path('star-off.png') %>',
         starOn : '<%= asset_path('star-on.png') %>',
-   		scoreName: 'subreview[rate4]', 
+   		scoreName: 'coffee_note[bitter_taste]', 
    		half: false, 
  	});
  	$('#sub-star5').raty({
    		size: 36,
    		starOff:  '<%= asset_path('star-off.png') %>',
         starOn : '<%= asset_path('star-on.png') %>',
-   		scoreName: 'subreview[rate5]', 
+   		scoreName: 'coffee_note[rich]', 
    		half: false, 
  	});
 </script>
