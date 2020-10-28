@@ -12,6 +12,9 @@ class CoffeeNotesController < ApplicationController
     	end
 	end
 
+	def index
+	end
+
 
 	private
 		def coffee_note_params
