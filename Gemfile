@@ -77,3 +77,4 @@ gem 'wysiwyg-rails'
 gem 'rubocop-airbnb'
 gem 'chart-js-rails', '~> 0.1.4'
 
+
