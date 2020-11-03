@@ -14,11 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
-//= require popper
-
 //= require bootstrap
 //= require summernote/summernote-bs4.min
 //= require summernote-init
+//= require trix
 //= require froala_editor.min.js
 //= require plugins/align.min.js
 //= require plugins/char_counter.min.js

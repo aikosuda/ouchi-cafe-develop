@@ -78,4 +78,6 @@ gem 'rubocop-airbnb'
 gem 'chart-js-rails', '~> 0.1.4'
 gem 'simple_form'
 gem 'summernote-rails'
+gem 'trix'
+gem 'carrierwave'
 

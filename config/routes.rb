@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'uploads/create'
+  get 'uploads/destroy'
   # メインページルーティング
   root 'home#top'
   get 'home/about' => 'home#about'

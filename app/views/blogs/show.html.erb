@@ -44,7 +44,7 @@
 						<h3><%= @blog.title %></h3>
 					</div>
 					<p><%= @blog.updated_at.strftime("%Y-%m-%d") %></p>
-					<div><%== @blog.content %></p></div>
+					<div><%= @blog.content.html_safe %></div>
 					<div class="favorite-box pull-right">
 	        			<% if user_signed_in? %>
 							<%= render 'like_form', blog: @blog %>
