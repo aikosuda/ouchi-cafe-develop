@@ -68,6 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'kaminari', '~> 1.2.1'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'refile', require: "refile/rails", github: 'manfe/refile'
 gem 'refile-mini_magick'
@@ -77,8 +78,6 @@ gem 'wysiwyg-rails'
 gem 'rubocop-airbnb'
 gem 'chart-js-rails', '~> 0.1.4'
 gem 'simple_form'
-gem 'summernote-rails'
+gem 'summernote-rails', '~> 0.8.10.0'
 gem 'trix'
 gem 'carrierwave'
-
-
